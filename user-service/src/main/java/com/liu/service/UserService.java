@@ -1,8 +1,17 @@
 package com.liu.service;
 
-import com.liu.model.auto.User;
+import com.liu.mapper.UserMapper;
+import com.liu.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public interface UserService {
+@Service
+public class UserService {
 
-    User getUserById(Integer id);
+    @Autowired
+    private UserMapper userMapper;
+
+    public User queryById(long id){
+       return userMapper.selectByPrimaryKey(id);
+    }
 }

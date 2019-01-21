@@ -1,6 +1,6 @@
 package com.liu.controller;
 
-import com.liu.model.auto.User;
+import com.liu.model.User;
 import com.liu.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,8 +16,8 @@ public class HomeController {
 
     @RequestMapping("/home")
     @ResponseBody
-    public String home(){
-       User user=userService.getUserById(1);
-       return user.toString();
+    public User home(){
+       User user=userService.queryById(16);
+       return user;
     }
 }
