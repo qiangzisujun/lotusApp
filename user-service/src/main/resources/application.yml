@@ -3,9 +3,10 @@ server:
   address: 127.0.0.1
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/leyou?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false
+    url: jdbc:mysql://localhost:3306/leyou?useUnicode=true&amp;characterEncoding=UTF-8&autoReconnect=true&useSSL=false
     username: root
     password: liusu9686
+    driverClassName: com.mysql.jdbc.Driver
 #mybatis
 mybatis:
   type-aliases-package: com.liu.model

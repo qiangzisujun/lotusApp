@@ -11,7 +11,7 @@ public class UserService {
     @Autowired
     private UserMapper userMapper;
 
-    public User queryById(long id){
+    public User queryById(Long id){
        return userMapper.selectByPrimaryKey(id);
     }
 }
