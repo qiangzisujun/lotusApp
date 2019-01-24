@@ -1,18 +1,20 @@
 server:
-  port: 888
-  address: 127.0.0.1
+  port: 8081
 spring:
+  application:
+    name: user-service
   datasource:
     url: jdbc:mysql://localhost:3306/leyou?useUnicode=true&amp;characterEncoding=UTF-8&autoReconnect=true&useSSL=false
     username: root
     password: liusu9686
     driverClassName: com.mysql.jdbc.Driver
+
 #mybatis
 mybatis:
   type-aliases-package: com.liu.model
-  
-  
-logging:
-  level:
-    com.lotus.dao: INFO,DEBUG
+
+eureka:
+    client:
+      service-url:
+        defaultZone: http://127.0.0.1:10086/eureka,http://127.0.0.1:10087/eureka
   

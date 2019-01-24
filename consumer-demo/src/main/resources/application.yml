@@ -1,12 +1,12 @@
 server:
-  port: 10087
+  port: 8088
 spring:
   application:
-    name: eureka-server
+    name: consumer-server
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:10086/eureka
+      defaultZone: http://127.0.0.1:10086/eureka,http://127.0.0.1:10087/eureka
   instance:
     prefer-ip-address: true
     ip-address: 127.0.0.1
