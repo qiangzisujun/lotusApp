@@ -7,6 +7,15 @@ eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:10086/eureka,http://127.0.0.1:10087/eureka
+    registry-fetch-interval-seconds: 5
   instance:
     prefer-ip-address: true
     ip-address: 127.0.0.1
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+

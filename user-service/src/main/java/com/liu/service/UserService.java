@@ -12,6 +12,6 @@ public class UserService {
     private UserMapper userMapper;
 
     public User queryById(Long id){
-       return userMapper.selectByPrimaryKey(id);
+        return userMapper.selectByPrimaryKey(id);
     }
 }
