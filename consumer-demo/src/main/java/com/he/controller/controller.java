@@ -1,9 +1,7 @@
 package com.he.controller;
 
+import com.he.client.UserClient;
 import com.he.model.User;
-import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -18,11 +16,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/consumer")
-@DefaultProperties(defaultFallback = "queryByIdFallback")
+//@DefaultProperties(defaultFallback = "queryByIdFallback")
 public class controller {
 
     @Autowired
     private RestTemplate restTemplate;
+
+    @Autowired
+    private UserClient userClient;
 
    /* @Autowired
     private DiscoveryClient  discoveryClient;
@@ -31,10 +32,8 @@ public class controller {
     private RibbonLoadBalancerClient client;
 */
     @GetMapping("/{id}")
-    public String queryById(@PathVariable("id") Long id){
-        String url="http://user-service/index/home/"+id;
-        String user=restTemplate.getForObject(url,String.class);
-        return user;
+    public User queryById(@PathVariable("id") Long id){
+        return userClient.queryById(id);
     }
 
     /*@GetMapping("/{id}")

@@ -11,6 +11,7 @@
         <module name="consumerdemo" />
         <module name="eureka-server" />
         <module name="eurekaserver" />
+        <module name="gateway" />
         <module name="user-service" />
         <module name="userservice" />
       </profile>
@@ -20,7 +21,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="consumerdemo" options="-parameters" />
       <module name="eurekaserver" options="-parameters" />
-      <module name="user-service" options="-parameters" />
+      <module name="user-service" options="" />
     </option>
   </component>
 </project>

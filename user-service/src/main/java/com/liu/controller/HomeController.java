@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/index")
+@RequestMapping("/user")
 public class HomeController {
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/home/{id}")
+    @RequestMapping("/{id}")
     @ResponseBody
     public User home(@PathVariable("id") Long id){
        User user=userService.queryById(id);
